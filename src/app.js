@@ -56,6 +56,11 @@ const when = [
 
 
 window.onload = function() {
-  //write your code here
+  function getRandomElement (array){
+    return array[Math.floor(Math.random()* array.lenght)]
+   
+  
+  }
+  console.log(getRandomElement(when));
   console.log("Hello Rigo from the console!");
 };
