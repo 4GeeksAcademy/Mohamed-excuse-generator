@@ -59,12 +59,15 @@ function getRandomElement (array){
 }
 
 function generateExcuse (){
-  return `${getRandomElement(who)} ${getRandomElement(actions)} ${getRandomElement(what)} ${getRandomElement(when)}`
+  const excuse =`${getRandomElement(who)} ${getRandomElement(actions)} ${getRandomElement(what)} ${getRandomElement(when)}`
+  document.getElementById("excuse").textContent = excuse;
 
 }
 
 window.onload = function() {
   
-  console.log(generateExcuse());
+  
   console.log("Hello Rigo from the console!");
 };
+
+window.onload = generateExcuse;
