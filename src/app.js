@@ -53,14 +53,18 @@ const when = [
   "while I was making coffee",
 ];
 
+function getRandomElement (array){
+  return array[Math.floor(Math.random()* array.length)]
+ 
+}
 
+function generateExcuse (){
+  return `${getRandomElement(who)} ${getRandomElement(actions)} ${getRandomElement(what)} ${getRandomElement(when)}`
+
+}
 
 window.onload = function() {
-  function getRandomElement (array){
-    return array[Math.floor(Math.random()* array.lenght)]
-   
   
-  }
-  console.log(getRandomElement(when));
+  console.log(generateExcuse());
   console.log("Hello Rigo from the console!");
 };
