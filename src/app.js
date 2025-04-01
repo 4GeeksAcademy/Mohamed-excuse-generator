@@ -52,6 +52,18 @@ const when = [
   "during a power outage",
   "while I was making coffee",
 ];
+const style=[
+  "cont",
+  "new-cont"
+]
+
+function getStyle (style){
+  return style[Math.floor(Math.random()*style.length)]
+  
+}
+
+const element = document.getElementById("container");
+  element.classList.add(getStyle(style));
 
 function getRandomElement (array){
   return array[Math.floor(Math.random()* array.length)]
@@ -63,11 +75,5 @@ function generateExcuse (){
   document.getElementById("excuse").textContent = excuse;
 
 }
-
-window.onload = function() {
-  
-  
-  console.log("Hello Rigo from the console!");
-};
 
 window.onload = generateExcuse;
