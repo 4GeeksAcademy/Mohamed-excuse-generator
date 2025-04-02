@@ -62,8 +62,14 @@ function getStyle (style){
   
 }
 
-const element = document.getElementById("container");
-  element.classList.add(getStyle(style));
+  const element = document.getElementsByClassName("container");{
+     element.classList.add(getStyle(style));
+  }
+ 
+  
+
+
+
 
 function getRandomElement (array){
   return array[Math.floor(Math.random()* array.length)]
@@ -77,3 +83,5 @@ function generateExcuse (){
 }
 
 window.onload = generateExcuse;
+
+
