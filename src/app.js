@@ -52,36 +52,31 @@ const when = [
   "during a power outage",
   "while I was making coffee",
 ];
-const style=[
+const style = [
   "cont",
   "new-cont"
 ]
 
-function getStyle (style){
-  return style[Math.floor(Math.random()*style.length)]
-  
+// function getStyle(style) {
+//   return style[Math.floor(Math.random() * style.length)]
+// }
+// const element = document.getElementsByClassName("container");
+// element.classList.add(getStyle(style));
+
+
+function getRandomElement(array) {
+  return array[Math.floor(Math.random() * array.length)]
+
 }
 
-  const element = document.getElementsByClassName("container");{
-     element.classList.add(getStyle(style));
-  }
- 
-  
-
-
-
-
-function getRandomElement (array){
-  return array[Math.floor(Math.random()* array.length)]
- 
-}
-
-function generateExcuse (){
-  const excuse =`${getRandomElement(who)} ${getRandomElement(actions)} ${getRandomElement(what)} ${getRandomElement(when)}`
+function generateExcuse() {
+  const excuse = `${getRandomElement(who)} ${getRandomElement(actions)} ${getRandomElement(what)} ${getRandomElement(when)}`
   document.getElementById("excuse").textContent = excuse;
 
 }
 
 window.onload = generateExcuse;
+
+
 
 
