@@ -1,5 +1,6 @@
 import "bootstrap";
 import "./style.css";
+import { Button } from "bootstrap";
 
 const who = [
   "My dog",
@@ -76,6 +77,9 @@ function generateExcuse() {
 }
 
 window.onload = generateExcuse;
+
+button.addEventListener("click", generateExcuse);
+
 
 
 
