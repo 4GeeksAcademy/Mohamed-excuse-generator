@@ -20,3 +20,46 @@ body{
     height: 400px;
     color: #FFF5E4;
 }
+.header{
+    background-color: #6A9C89;
+    margin-top: 30px;
+    width: 60%;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+}
+.header-tittle{
+    margin: 10px;
+    color: white;
+}
+.excuse{
+    margin: 5px;
+    background-color: #EC5228;
+    width: 60%;
+    height: 70px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    
+}
+#excuse{
+    color: #EFEFEF;
+    font-weight: 300;
+    font-size: large;
+}
+.button{
+    background-color: #3F7D58;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    padding: 5px;
+    font-weight: 500;
+    font-size: large;
+    
+   
+}
