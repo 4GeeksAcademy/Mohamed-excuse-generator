@@ -51,19 +51,16 @@ const when = [
   "because Mercury is in retrograde",
   "due to a temporary glitch in the Matrix",
   "during a power outage",
-  "while I was making coffee",
+  "while I was making coffee", 
 ];
 const style = [
-  "cont",
-  "new-cont"
+  "background-random1",
+  "background-random2"
 ]
 
 // function getStyle(style) {
 //   return style[Math.floor(Math.random() * style.length)]
 // }
-// const element = document.getElementsByClassName("container");
-// element.classList.add(getStyle(style));
-
 
 function getRandomElement(array) {
   return array[Math.floor(Math.random() * array.length)]
@@ -73,12 +70,21 @@ function getRandomElement(array) {
 function generateExcuse() {
   const excuse = `${getRandomElement(who)} ${getRandomElement(actions)} ${getRandomElement(what)} ${getRandomElement(when)}`
   document.getElementById("excuse").textContent = excuse;
-
+  const element = document.getElementsByClassName("container");
+  element.classList.add(getRandomElement(style));
+  
 }
+
+
+const button = document.getElementsByClassName("button")[0];
+    
+button.addEventListener("click", generateExcuse);
+      
+   
 
 window.onload = generateExcuse;
 
-button.addEventListener("click", generateExcuse);
+
 
 
 
