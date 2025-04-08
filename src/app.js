@@ -55,34 +55,49 @@ const when = [
 ];
 const style = [
   "background-random1",
-  "background-random2"
+  "background-random2",
+  "background-random3",
+  "background-random4",
+  "background-random5",
+  "background-random6",
+  "background-random7",
 ]
 
-function getStyle(style) {
-  return style[Math.floor(Math.random() * style.length)]
-}
 
-function getRandomElement(array) {
-  return array[Math.floor(Math.random() * array.length)]
 
-}
+window.onload = function(){
 
-function generateExcuse() {
-  const excuse = `${getRandomElement(who)} ${getRandomElement(actions)} ${getRandomElement(what)} ${getRandomElement(when)}`
-  document.getElementById("excuse").textContent = excuse;
-  const element = document.getElementsByClassName("excuse")[0];
-  element.classList.add(getRandomElement(style));
+  function getStyle(style) {
+    return style[Math.floor(Math.random() * style.length)]
   
-}
-
-
-const button = document.getElementsByClassName("button")[0];
+  }
+  
+  function getRandomElement(array) {
+    return array[Math.floor(Math.random() * array.length)]
+  
+  }
+  
+  function generateExcuse() {
+    const excuse = `${getRandomElement(who)} ${getRandomElement(actions)} ${getRandomElement(what)} ${getRandomElement(when)}`
+    document.getElementById("excuse").textContent = excuse;
+    const element = document.getElementsByClassName("excuse")[0];
+    element.classList.add(getStyle(style));
+  
     
-button.addEventListener("click", generateExcuse, getStyle);
+  }
+  
+  function buttonClick(){
+    generateExcuse();
+    getStyle(style);}
+  
+  
+  const button = document.getElementsByClassName("button")[0];
       
-   
-
-window.onload = generateExcuse;
+  button.addEventListener("click", buttonClick);
+  generateExcuse();
+        
+  
+};
 
 
 
