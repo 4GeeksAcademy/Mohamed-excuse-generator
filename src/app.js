@@ -58,9 +58,9 @@ const style = [
   "background-random2"
 ]
 
-// function getStyle(style) {
-//   return style[Math.floor(Math.random() * style.length)]
-// }
+function getStyle(style) {
+  return style[Math.floor(Math.random() * style.length)]
+}
 
 function getRandomElement(array) {
   return array[Math.floor(Math.random() * array.length)]
@@ -70,7 +70,7 @@ function getRandomElement(array) {
 function generateExcuse() {
   const excuse = `${getRandomElement(who)} ${getRandomElement(actions)} ${getRandomElement(what)} ${getRandomElement(when)}`
   document.getElementById("excuse").textContent = excuse;
-  const element = document.getElementsByClassName("container");
+  const element = document.getElementsByClassName("excuse")[0];
   element.classList.add(getRandomElement(style));
   
 }
@@ -78,7 +78,7 @@ function generateExcuse() {
 
 const button = document.getElementsByClassName("button")[0];
     
-button.addEventListener("click", generateExcuse);
+button.addEventListener("click", generateExcuse, getStyle);
       
    
 
