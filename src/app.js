@@ -63,38 +63,51 @@ const style = [
   "background-random7",
 ]
 
-
-
 window.onload = function(){
 
-  function getStyle(style) {
-    return style[Math.floor(Math.random() * style.length)]
+  // function getStyle(style) {
+  //   return style[Math.floor(Math.random() * style.length)]
   
-  }
+  // }
   
   function getRandomElement(array) {
     return array[Math.floor(Math.random() * array.length)]
   
   }
   
-  function generateExcuse() {
-    const excuse = `${getRandomElement(who)} ${getRandomElement(actions)} ${getRandomElement(what)} ${getRandomElement(when)}`
-    document.getElementById("excuse").textContent = excuse;
-    const element = document.getElementsByClassName("excuse")[0];
-    element.classList.add(getStyle(style));
-  
+  // function generateExcuse() {
+  //   const excuse = `${getRandomElement(who)} ${getRandomElement(actions)} ${getRandomElement(what)} ${getRandomElement(when)}`
+  //   document.getElementById("excuse").textContent = excuse;
+  //   const element = document.getElementsByClassName("excuse")[0];
+  //   element.classList.add(getRandomElement(style));
     
+  // }
+
+ // Generate a random excuse
+  function generateExcuse() {
+   
+    const excuse = `${getRandomElement(who)} ${getRandomElement(actions)} ${getRandomElement(what)} ${getRandomElement(when)}`;
+  
+// Update the text content 
+    const excuseElement = document.getElementById("excuse");
+    excuseElement.textContent = excuse;
+    
+  
+// Apply a random style 
+    const styledElement = document.getElementsByClassName("excuse")[0];
+    if (styledElement) {
+      const randomStyle = getRandomElement(style); // Pick a random style
+      styledElement.className = "excuse"; // Reset existing classes
+      styledElement.classList.add(randomStyle); // Add the new random style
+    }
   }
-  
-  function buttonClick(){
-    generateExcuse();
-    getStyle(style);}
-  
-  
+
   const button = document.getElementsByClassName("button")[0];
       
-  button.addEventListener("click", buttonClick);
+  button.addEventListener("click", generateExcuse);
   generateExcuse();
+  
+
         
   
 };
