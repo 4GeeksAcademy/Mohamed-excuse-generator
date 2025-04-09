@@ -1,6 +1,6 @@
 import "bootstrap";
 import "./style.css";
-import { Button } from "bootstrap";
+
 
 const who = [
   "My dog",
@@ -65,23 +65,13 @@ const style = [
 
 window.onload = function(){
 
-  // function getStyle(style) {
-  //   return style[Math.floor(Math.random() * style.length)]
-  
-  // }
+
   
   function getRandomElement(array) {
     return array[Math.floor(Math.random() * array.length)]
   
   }
   
-  // function generateExcuse() {
-  //   const excuse = `${getRandomElement(who)} ${getRandomElement(actions)} ${getRandomElement(what)} ${getRandomElement(when)}`
-  //   document.getElementById("excuse").textContent = excuse;
-  //   const element = document.getElementsByClassName("excuse")[0];
-  //   element.classList.add(getRandomElement(style));
-    
-  // }
 
  // Generate a random excuse
   function generateExcuse() {
@@ -96,9 +86,9 @@ window.onload = function(){
 // Apply a random style 
     const styledElement = document.getElementsByClassName("excuse")[0];
     if (styledElement) {
-      const randomStyle = getRandomElement(style); // Pick a random style
-      styledElement.className = "excuse"; // Reset existing classes
-      styledElement.classList.add(randomStyle); // Add the new random style
+      const randomStyle = getRandomElement(style); 
+      styledElement.className = "excuse"; 
+      styledElement.classList.add(randomStyle);
     }
   }
 
